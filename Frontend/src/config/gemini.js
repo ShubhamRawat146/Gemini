@@ -1,4 +1,4 @@
-// const API_KEY = "AIzaSyCwy89xVMFlrUCIixyJSgpFItTLOwTRmu4";
+
 
 /*
  * Install the Generative AI SDK
