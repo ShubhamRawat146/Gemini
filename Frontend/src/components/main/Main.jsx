@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Main.css";
 import { Context } from "../../context/Context";
 
@@ -12,36 +12,115 @@ const Main = () => {
     setInput,
     input,
   } = useContext(Context);
+  const [copySuccess, setCopySuccess] = useState("");
+
+  // your function to copy here
+
+  const copyToClipBoard = async (copyMe) => {
+    try {
+      await navigator.clipboard.writeText(copyMe);
+      setCopySuccess("Copied!");
+    } catch (err) {
+      setCopySuccess("Failed to copy!");
+    }
+  };
   return (
     <div className="main">
       <div className="nav">
-        <p>Gemini</p>
+        <p>Nexa</p>
       </div>
       <div className="main-container">
         {!showResult ? (
           <>
             <div className="greet">
               <p>
-                <span>Hi i am Gemini</span>
+                <span>Hi i am Nexa</span>
               </p>
               <p>How can i help you?</p>
             </div>
             <div className="cards">
               <div className="card">
-                <p>Suggest beautiful places to see on an upcoming road trip</p>
-                <img src="compass-regular.png" alt="compass" />
+                <p
+                  onClick={() =>
+                    copyToClipBoard(
+                      "Suggest beautiful places to see on an upcoming road trip"
+                    )
+                  }
+                >
+                  Suggest beautiful places to see on an upcoming road trip
+                </p>
+                <img
+                  src="compass-regular.png"
+                  alt="compass"
+                  onClick={() =>
+                    copyToClipBoard(
+                      "Suggest beautiful places to see on an upcoming road trip"
+                    )
+                  }
+                />
               </div>
               <div className="card">
-                <p>Briefly summarize this concept: urban planning</p>
-                <img src="compass-regular.png" alt="compass" />
+                <p
+                  onClick={() =>
+                    copyToClipBoard(
+                      "Create a template for an accountant’s resume with ten years of experience. Include sections for accomplishments, skills and certifications."
+                    )
+                  }
+                >
+                  Create a template for an accountant’s resume with ten years of
+                  experience. Include sections for accomplishments, skills and
+                  certifications.
+                </p>
+                <img
+                  src="lightbulb-regular.png"
+                  alt="compass"
+                  onClick={() =>
+                    copyToClipBoard(
+                      "Create a template for an accountant’s resume with ten years of experience. Include sections for accomplishments, skills and certifications."
+                    )
+                  }
+                />
               </div>
               <div className="card">
-                <p>Brainstorm team bonding activities for our work retreat</p>
-                <img src="compass-regular.png" alt="compass" />
+                <p
+                  onClick={() =>
+                    copyToClipBoard(
+                      "Develop a compelling thesis statement for an argumentative essay about climate change."
+                    )
+                  }
+                >
+                  Develop a compelling thesis statement for an argumentative
+                  essay about climate change.
+                </p>
+                <img
+                  src="lightbulb-regular.png"
+                  alt="compass"
+                  onClick={() =>
+                    copyToClipBoard(
+                      "Develop a compelling thesis statement for an argumentative essay about climate change."
+                    )
+                  }
+                />
               </div>
               <div className="card">
-                <p>Improve the readability of the following code</p>
-                <img src="code-solid.png" alt="compass" />
+                <p
+                  onClick={() =>
+                    copyToClipBoard(
+                      "Improve the readability of the following code"
+                    )
+                  }
+                >
+                  Improve the readability of the following code
+                </p>
+                <img
+                  src="code-solid.png"
+                  alt="compass"
+                  onClick={() =>
+                    copyToClipBoard(
+                      "Improve the readability of the following code"
+                    )
+                  }
+                />
               </div>
             </div>
           </>
@@ -87,8 +166,8 @@ const Main = () => {
             </div>
           </div>
           <p className="bottom-info">
-            Gemini may display inaccurate info, including about people, so
-            double-check its responses.your privacy and Gemini Apps
+            Nexa may display inaccurate info, including about people, so
+            double-check its responses.your privacy and Nexa Apps
           </p>
         </div>
       </div>

@@ -53,6 +53,11 @@ html,body{
     animation: fadeIn 1.5s;
 }
 
+.sidebar .recent a{
+    text-decoration: none;
+    color: black;
+}
+
 .sidebar .recent-title{
     margin-top: 30px;
     margin-bottom: 20px;

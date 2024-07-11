@@ -35,7 +35,12 @@ const Sidebar = () => {
         </div>
         {extended ? (
           <div className="recent">
-            <p className="recent-title">Prompts</p>
+            <a
+              href="https://blog.hootsuite.com/chatgpt-prompts/"
+              target="_blank"
+            >
+              <p className="recent-title">Prompts</p>
+            </a>
             <div className="recent-entry">
               <img
                 className="recent-message"
@@ -52,7 +57,9 @@ const Sidebar = () => {
                 src="message-regular.png"
                 alt="recent-message"
               />
-              <p>What is HTML...</p>
+              <p onClick={() => copyToClipBoard("What is HTML")}>
+                What is HTML...
+              </p>
             </div>
             <div className="recent-entry">
               <img
@@ -60,7 +67,9 @@ const Sidebar = () => {
                 src="message-regular.png"
                 alt="recent-message"
               />
-              <p>What is ReactNative...</p>
+              <p onClick={() => copyToClipBoard("What is ReactNative")}>
+                What is ReactNative...
+              </p>
             </div>
             <div className="recent-entry">
               <img
@@ -68,7 +77,9 @@ const Sidebar = () => {
                 src="message-regular.png"
                 alt="recent-message"
               />
-              <p>What is Mongoose...</p>
+              <p onClick={() => copyToClipBoard("What is Mongoose")}>
+                What is Mongoose...
+              </p>
             </div>
           </div>
         ) : null}
